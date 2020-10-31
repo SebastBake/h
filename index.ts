@@ -2,18 +2,18 @@ type ElementOf<E extends string> = E extends keyof HTMLElementTagNameMap
   ? HTMLElementTagNameMap[E]
   : E extends `${infer El_NAME}.${infer _}`
   ? El_NAME extends keyof HTMLElementTagNameMap
-    ? HTMLElementTagNameMap[El_NAME]
-    : Element
+  ? HTMLElementTagNameMap[El_NAME]
+  : Element
   : E extends `${infer El_NAME}#${infer _}`
   ? El_NAME extends keyof HTMLElementTagNameMap
-    ? HTMLElementTagNameMap[El_NAME]
-    : Element
+  ? HTMLElementTagNameMap[El_NAME]
+  : Element
   : Element;
 
 type Attributes<A extends string = string> = { [K in A]?: K extends `on${infer EVENT_NAME}`
   ? EVENT_NAME extends keyof HTMLElementEventMap
-    ? ((ev: HTMLElementEventMap[EVENT_NAME]) => any) | undefined | null
-    : string | null | undefined | number | boolean
+  ? ((ev: HTMLElementEventMap[EVENT_NAME]) => any) | undefined | null
+  : string | null | undefined | number | boolean
   : string | null | undefined | number | boolean
 }
 
@@ -27,19 +27,19 @@ function h<NAME extends string, ATTRS extends string>(elementName: NAME, attr: A
 function h<NAME extends string>(elementName: NAME, ...children: Children[]): ElementOf<NAME>
 function h<NAME extends string>(elementName: NAME): ElementOf<NAME>
 function h<NAME extends string>(elementName: NAME, ...args: any[]): ElementOf<NAME> {
-    const element = makeElement(elementName)
+  const element = makeElement(elementName)
 
-    for (const item of args) {
-      if (typeof item === 'object'
-        && !Array.isArray(item)
-        && typeof item.isSameNode !== 'function') {
-        addAttributesToElement(element, item)
-      } else {
-        addChildrenToElement(element, item)
-      }
+  for (const item of args) {
+    if (typeof item === 'object'
+      && !Array.isArray(item)
+      && typeof item.isSameNode !== 'function') {
+      addAttributesToElement(element, item)
+    } else {
+      addChildrenToElement(element, item)
     }
-    
-    return element
+  }
+
+  return element
 }
 
 /**
@@ -81,16 +81,16 @@ function addAttributesToElement(element: Element, attr: Attributes) {
  * @param template 
  */
 function makeElement<NAME extends string>(template: NAME): ElementOf<NAME> {
- 
+
   // tokenize the string
   const tokens = template.match(/[.#]?[0-9a-zA-Z-_]+/g) || []
   const elementName = tokens[0];
   let element: Element;
   try {
     element = document.createElement(elementName)
-  } catch  {
+  } catch {
     try {
-      element = document.createElementNS('http://www.w3.org/2000/svg',elementName)
+      element = document.createElementNS('http://www.w3.org/2000/svg', elementName)
     } catch (e) {
       throw e
     }
