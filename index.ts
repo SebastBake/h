@@ -100,7 +100,6 @@ function makeElement<NAME extends string>(template: NAME): ElementOf<NAME> {
   // Add ids and classes into the new element
   for (const idOrClassWithDotOrHash of idsAndClasses) {
     const idOrClass = idOrClassWithDotOrHash.slice(1)
-
     if (idOrClassWithDotOrHash[0] === '.') {
       element.classList.add(idOrClass)
     } else if (idOrClassWithDotOrHash[0] === '#') {
