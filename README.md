@@ -1,7 +1,7 @@
-![size](https://img.shields.io/bundlephobia/minzip/@sebastbake/h)
-![downloads](https://img.shields.io/npm/dw/@sebastbake/h)
-![npm](https://img.shields.io/npm/v/@sebastbake/h)
-![GitHub](https://img.shields.io/github/license/sebastbake/h)
+[![size](https://img.shields.io/bundlephobia/minzip/@sebastbake/h)](https://bundlephobia.com/result?p=@sebastbake/h@1.0.1)
+[![downloads](https://img.shields.io/npm/dw/@sebastbake/h)](https://www.npmjs.com/package/@sebastbake/h)
+[![npm](https://img.shields.io/npm/v/@sebastbake/h)](https://www.npmjs.com/package/@sebastbake/h)
+[![GitHub](https://img.shields.io/github/license/sebastbake/h)](https://github.com/SebastBake/h)
 
 # h
 

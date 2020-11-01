@@ -1,7 +1,7 @@
 {
   "name": "@sebastbake/h",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "An alternative implementation of the excellent hyperscript library. Makes use of typescript 4.1 template literal types to infer element types.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
     "build": "npx tsc",
     "prepublishOnly": "npm run build"
   },
-  "author": "",
+  "author": "Sebastian Baker",
   "license": "MIT",
   "devDependencies": {
     "typescript": "^4.1.0-beta"
