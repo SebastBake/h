@@ -1,6 +1,6 @@
 {
   "name": "@sebastbake/h",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "An alternative implementation of the excellent hyperscript library. Makes use of typescript 4.1 template literal types to infer element types.",
   "main": "index.js",
   "repository": {
@@ -18,7 +18,9 @@
   },
   "files": [
     "index.js",
-    "index.d.ts"
+    "index.d.ts",
+    "frag.js",
+    "frag.d.ts"
   ],
   "tags": [
     "typescript",
